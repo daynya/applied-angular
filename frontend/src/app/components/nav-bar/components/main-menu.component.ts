@@ -8,10 +8,13 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   template: `
     <ul class="menu menu-horizontal px-1">
-        @for(link of listOfLinks(); track link) {
-          <li><a [routerLink]="link.link">{{link.label}}</a></li>
 
-          
+        @for(link of listOfLinks(); track link) {
+          <!-- @if(link.children) {
+            <app-main-menu-child-links [link]="link" />
+          } else {
+            <app-main-menu-link [link]="link" />
+          } -->         
         }
 
       <!-- <li><a>Item 1</a></li>
