@@ -7,8 +7,10 @@ import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
     selector: 'app-root',
     standalone: true,
     template: `
+    <app-nav-bar />
+
     <main class="container mx-auto">
-      <app-nav-bar />
+      <router-outlet />
     </main>
   `,
     styles: [],
