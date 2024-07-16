@@ -1,8 +1,8 @@
 import { Component, input } from '@angular/core';
 import { NavbarLinks } from '../models';
 import { RouterLink } from '@angular/router';
-import { LinkItemChildrenComponent } from "./link-item-children.component";
-import { LinkItemComponent } from "./link-item.component";
+import { LinkItemChildrenComponent } from './link-item-children.component';
+import { LinkItemComponent } from './link-item.component';
 
 @Component({
   selector: 'app-main-menu',
@@ -10,16 +10,14 @@ import { LinkItemComponent } from "./link-item.component";
   imports: [RouterLink, LinkItemChildrenComponent, LinkItemComponent],
   template: `
     <ul class="menu menu-horizontal px-1">
-      @for(link of listOfLinks(); track $index) {
-          @if(link.children) {
-            <app-link-item-children [link]="link" />
-          } @else {
-            <app-link-item [link]="link" />
-          }
-      }
+      @for(link of listOfLinks(); track $index) { @if(link.children) {
+      <app-link-item-children [link]="link" />
+      } @else {
+      <app-link-item [link]="link" />
+      } }
     </ul>
   `,
-  styles: ``
+  styles: ``,
 })
 export class MainMenuComponent {
   listOfLinks = input.required<NavbarLinks>();
