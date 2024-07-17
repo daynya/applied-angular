@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
-import { SideMenuComponent } from "./components/side-menu.component";
-import { UserMenuComponent } from "./components/user-menu.component";
-import { MainMenuComponent } from "./components/main-menu.component";
+import { SideMenuComponent } from './components/side-menu.component';
+import { UserMenuComponent } from './components/user-menu.component';
+import { MainMenuComponent } from './components/main-menu.component';
 import { NavbarLinks } from './models';
 
 @Component({
@@ -22,14 +22,17 @@ import { NavbarLinks } from './models';
       </div>
     </div>
   `,
-  styles: ``
+  styles: ``,
 })
 export class NavBarComponent {
-
   links = signal<NavbarLinks>([
     {
       label: 'Students',
-      link: '/students'
-    }
+      link: '/students',
+    },
+    {
+      label: 'Dashboard',
+      link: '/dashboard',
+    },
   ]);
 }
